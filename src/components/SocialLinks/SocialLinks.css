@@ -1,31 +1,49 @@
-:root {
-  --primary-color: #2a9d8f;
-}
-
-.social-bar {
-  position: fixed;
-  right: 2rem;
-  top: 30%;
+.socials {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  color: white;
+  gap: 1.25rem;
 }
 
-.social-bar .line {
+.socials a {
+  display: inline-flex;
+  padding: 0.25rem;
+  font-size: 1.4rem;
+  color: var(--text);
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.socials a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.socials--rail {
+  position: fixed;
+  right: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  flex-direction: column;
+}
+
+.socials__line {
   width: 2px;
-  height: 75px;
-  background-color: var(--primary-color);
-  margin-bottom: 1rem;
+  height: 72px;
+  margin-bottom: 0.5rem;
+  background: var(--accent);
 }
 
-.social-bar a {
-  font-size: 1.5rem;
-  color: white;
-  transition: color 0.3s;
+/* Rail only where there's room beside the content; inline row everywhere else. */
+@media (max-width: 1279px) {
+  .socials--rail {
+    display: none;
+  }
 }
 
-.social-bar a:hover {
-  color: var(--primary-color);
+@media (min-width: 1280px) {
+  .socials--inline {
+    display: none;
+  }
 }

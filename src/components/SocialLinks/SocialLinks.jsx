@@ -1,24 +1,17 @@
+import { socials } from "../../data.js";
+import Icon from "../Icon.jsx";
 import "./SocialLinks.css";
-import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebookSquare } from "react-icons/fa";
 
-function SocialLinks() {
+// variant="rail": fixed vertical bar on wide screens. variant="inline": row inside the hero on smaller screens.
+export default function SocialLinks({ variant = "inline" }) {
   return (
-    <div className="social-bar">
-      <div className="line"></div>
-      <a href="https://www.instagram.com/alec_srl/" target="_blank" rel="noreferrer">
-        <FaInstagram />
-      </a>
-      <a href="https://www.facebook.com/alec.searle.54" target="_blank" rel="noreferrer">
-        <FaFacebookSquare />
-      </a>
-      <a href="https://www.linkedin.com/in/alec-searle/" target="_blank" rel="noreferrer">
-        <FaLinkedinIn />
-      </a>
-      <a href="https://github.com/alecsearle" target="_blank" rel="noreferrer">
-        <FaGithub />
-      </a>
+    <div className={`socials socials--${variant}`}>
+      {variant === "rail" && <span className="socials__line" aria-hidden="true" />}
+      {socials.map((s) => (
+        <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
+          <Icon name={s.icon} />
+        </a>
+      ))}
     </div>
   );
 }
-
-export default SocialLinks;

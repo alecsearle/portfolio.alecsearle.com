@@ -1,40 +1,27 @@
-import { useState } from "react";
-import "./App.css";
+import PillNav from "./components/PillNav/PillNav.jsx";
+import SocialLinks from "./components/SocialLinks/SocialLinks.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import About from "./components/About/About.jsx";
 import Experience from "./components/Experience/Experience.jsx";
 import Projects from "./components/Projects/Projects.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 
-function App() {
+export default function App() {
   return (
     <>
-      <Hero />
-      <section id="about">
+      <PillNav />
+      <SocialLinks variant="rail" />
+      <main>
+        <Hero />
         <About />
-      </section>
-      <section id="experience">
         <Experience />
-      </section>
-      <section id="projects">
-        <Projects
-          textAutoHide={true}
-          enableStars={false}
-          enableSpotlight={false}
-          enableBorderGlow={true}
-          enableTilt={false}
-          enableMagnetism={true}
-          clickEffect={true}
-          spotlightRadius={50}
-          particleCount={12}
-          glowColor="#2a9d8f"
-        />
-      </section>
-      <section id="contact">
+        <Projects />
         <Contact />
-      </section>
+      </main>
+      <footer className="site-footer">
+        © {new Date().getFullYear()} Alec Searle ·{" "}
+        <a href="https://alecsearle.com">alecsearle.com</a>
+      </footer>
     </>
   );
 }
-
-export default App;

@@ -1,16 +1,29 @@
-# portfolio.alecsearle.dev
+# portfolio.alecsearle.com
 
-Personal portfolio site for Alec Searle — Software Engineering student and web developer based out of Utah Tech University.
+Personal portfolio for Alec Searle: software engineer at Zonos and freelance web developer based in St. George, Utah.
 
-![alt text](<Screenshot 2026-04-26 at 1.08.20 PM.png>)
+![Screenshot of the site](docs/screenshot.png)
 
-## About the Site
+## About the site
 
-A single-page portfolio with smooth scroll navigation across four sections: About, Experience, Projects, and Contact. The hero section features an interactive dot grid that reacts to mouse movement, built with GSAP. Project cards include subtle animations like tilt, magnetism, and border glow effects.
+A single-page portfolio with About, Experience, Projects, and Contact sections. The hero has an interactive dot grid (GSAP) that reacts to the cursor, the Experience timeline fills in as you scroll, and project cards get a cursor-following border glow on desktop. Touch devices and `prefers-reduced-motion` get a calmer, static version.
 
-## Tech Stack
+## Editing content
 
-- **React 19** + **Vite**
-- **Tailwind CSS** with `tailwindcss-animate`
-- **GSAP** for animations
-- **Lucide React** + **React Icons**
+All copy (experience, projects, links, quick facts) lives in [`src/data.js`](src/data.js). Project screenshots go in `public/projects/` (JPGs around 1200px wide keep the page light).
+
+## Development
+
+```bash
+npm install
+npm run dev     # local dev server
+npm run build   # production build to dist/
+npm run lint
+```
+
+## Tech stack
+
+- React 19 + Vite
+- Plain CSS with shared design tokens in `src/index.css`
+- GSAP (dot grid physics, scroll animations)
+- React Icons

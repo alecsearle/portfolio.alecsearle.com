@@ -1,13 +1,11 @@
-import "./Hero.css";
-import portrait from "../../../public/assets/portrait_transparent.png";
+import portrait from "../../assets/portrait.png";
 import SocialLinks from "../SocialLinks/SocialLinks.jsx";
-import PillNav from "../PillNav/PillNav.jsx";
 import DotGrid from "../DotGrid/DotGrid.jsx";
+import "./Hero.css";
 
 export default function Hero() {
   return (
-    <section id="hero" className="hero-container">
-      {/* DotGrid as background */}
+    <section id="hero" className="hero">
       <DotGrid
         dotSize={2}
         gap={25}
@@ -18,37 +16,31 @@ export default function Hero() {
         shockStrength={5}
         resistance={750}
         returnDuration={1.5}
-        className="hero-background"
       />
 
-      {/* PillNav at the top */}
-      <PillNav />
-
-      {/* Hero content on top */}
-      <div className="hero-content">
-        <div className="hero-text">
-          <h1>
-            I'M <span className="highlight">Alec Searle</span>
+      <div className="hero__inner">
+        <div className="hero__text">
+          <h1 className="hero__title">
+            I'm <span className="hero__name">Alec Searle</span>
           </h1>
-          <h2>Software Engineering Student & Web Developer</h2>
-          <button
-            className="contact-btn"
-            onClick={() => {
-              document.getElementById("contact").scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }}
-          >
-            Contact Me
-          </button>
+          <p className="hero__subtitle">Software Engineer &amp; Web Developer</p>
+          <div className="hero__actions">
+            <a className="btn" href="#contact">
+              Contact Me
+            </a>
+            <SocialLinks variant="inline" />
+          </div>
         </div>
 
-        <div className="hero-image">
-          <img src={portrait} alt="Portrait" />
+        <div className="hero__portrait">
+          <img
+            src={portrait}
+            alt="Portrait of Alec Searle"
+            width="900"
+            height="907"
+            fetchPriority="high"
+          />
         </div>
-
-        <SocialLinks />
       </div>
     </section>
   );
