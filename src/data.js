@@ -41,7 +41,7 @@ export const experience = [
     location: "St. George, UT",
     roles: [
       {
-        // TODO(Alec): set the real start month and replace this bullet with what you work on.
+        // TODO(Alec): replace this bullet with what you actually work on.
         title: "Associate Software Engineer",
         period: "2026 – Present",
         bullets: ["Build and maintain software for Zonos' cross-border commerce platform."],
@@ -63,7 +63,7 @@ export const experience = [
     roles: [
       {
         title: "Freelance Web Developer",
-        period: "Ongoing",
+        period: "2025 – Present",
         bullets: [
           "Build and launch WordPress websites for private clients, boosting online visibility and SEO reach.",
           "Provide ongoing hosting, content, and performance optimization support.",
