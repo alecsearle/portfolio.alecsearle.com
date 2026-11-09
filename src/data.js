@@ -41,12 +41,10 @@ export const experience = [
     location: "St. George, UT",
     roles: [
       {
+        // TODO(Alec): replace this bullet with what you actually work on.
         title: "Associate Software Engineer",
         period: "2026 – Present",
-        bullets: [
-          "Build internal financial tooling that serves as a source of truth for Zonos' financial data.",
-          "Improve the accuracy and visibility of financial data across internal systems.",
-        ],
+        bullets: ["Build and maintain software for Zonos' cross-border commerce platform."],
       },
       {
         title: "Landed Cost Data Analyst",
